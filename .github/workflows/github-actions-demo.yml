@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions Context Dump Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -17,4 +17,20 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Dump github context
-      - run: echo "${{ toJSON(github) }} "
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump env context
+        run: echo '${{ toJSON(env) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump vars context
+        run: echo '${{ toJSON(vars) }}'
+      - name: Dump secrets context
+        run: echo '${{ toJSON(secrets) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
