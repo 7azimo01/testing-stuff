@@ -20,6 +20,8 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Show custom BASE_URL
         run: echo "Custom BASE_URL is ${{ env.BASE_URL }}"
+      - name: Ping BASE_URL
+        run: curl "$BASE_URL"
       - name: Dump github context
         run: echo '${{ toJSON(github) }}'
       - name: Dump env context
